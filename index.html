@@ -1,306 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>RoofExplore AI | Premium Roofing Solutions</title>
+  <title>RoofExplore-AI | Premium Roofing Solutions</title>
 
-    <meta name="description" content="RoofExplore AI helps homeowners discover premium, durable, modern roofing solutions.">
+  <meta name="description"
+        content="RoofExplore-AI helps homeowners, architects, builders and property developers discover premium, durable and modern roofing solutions.">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f7fa;
-            color: #172033;
-            line-height: 1.6;
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fa;
+      color: #172033;
+      line-height: 1.6;
+    }
 
-        header {
-            background: #ffffff;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #e5e7eb;
-        }
+    header {
+      background: #101827;
+      color: white;
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
 
-        .logo {
-            font-size: 24px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
 
-        .logo span {
-            color: #2563eb;
-        }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
 
-        nav a {
-            text-decoration: none;
-            color: #172033;
-            margin-left: 25px;
-            font-weight: 600;
-        }
+    .hero {
+      min-height: 620px;
+      padding: 90px 7%;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(120deg, #101827, #26384f);
+      color: white;
+    }
 
-        .hero {
-            min-height: 620px;
-            display: flex;
-            align-items: center;
-            padding: 80px 8%;
-            background: linear-gradient(135deg, #eef5ff, #ffffff);
-        }
+    .hero-content {
+      max-width: 800px;
+    }
 
-        .hero-content {
-            max-width: 700px;
-        }
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
 
-        .hero h1 {
-            font-size: clamp(42px, 6vw, 72px);
-            line-height: 1.05;
-            margin-bottom: 25px;
-        }
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin-bottom: 35px;
+      color: #dce5ef;
+    }
 
-        .hero h1 span {
-            color: #2563eb;
-        }
+    .button {
+      display: inline-block;
+      background: #ffffff;
+      color: #101827;
+      padding: 15px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-        .hero p {
-            font-size: 21px;
-            color: #526071;
-            max-width: 650px;
-            margin-bottom: 35px;
-        }
+    section {
+      padding: 75px 7%;
+    }
 
-        .button {
-            display: inline-block;
-            background: #2563eb;
-            color: white;
-            padding: 15px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            margin-right: 10px;
-        }
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
 
-        .button.secondary {
-            background: #172033;
-        }
+    .section-title h2 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
 
-        section {
-            padding: 80px 8%;
-        }
+    .section-title p {
+      color: #667085;
+    }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 45px;
-        }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+    }
 
-        .section-title h2 {
-            font-size: 38px;
-            margin-bottom: 10px;
-        }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+    }
 
-        .section-title p {
-            color: #667085;
-        }
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 25px;
-        }
+    .card p {
+      color: #667085;
+    }
 
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 14px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-        }
+    .ai-section {
+      background: #eaf0f6;
+      text-align: center;
+    }
 
-        .card h3 {
-            margin-bottom: 12px;
-            font-size: 22px;
-        }
+    .ai-box {
+      max-width: 850px;
+      margin: auto;
+      background: white;
+      padding: 45px;
+      border-radius: 18px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+    }
 
-        .card p {
-            color: #667085;
-        }
+    .ai-box h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
 
-        .ai-section {
-            background: #172033;
-            color: white;
-            text-align: center;
-        }
+    footer {
+      background: #101827;
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
 
-        .ai-section p {
-            max-width: 750px;
-            margin: 20px auto 0;
-            color: #d6dbe4;
-            font-size: 18px;
-        }
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+      }
 
-        .cta {
-            text-align: center;
-            background: #ffffff;
-        }
+      nav a {
+        margin: 0 8px;
+      }
 
-        .cta h2 {
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
-
-        footer {
-            background: #0d1422;
-            color: #b9c1ce;
-            text-align: center;
-            padding: 30px;
-        }
-
-        @media (max-width: 700px) {
-            nav {
-                display: none;
-            }
-
-            .hero {
-                padding: 60px 6%;
-            }
-
-            section {
-                padding: 60px 6%;
-            }
-        }
-    </style>
+      .hero {
+        padding: 70px 7%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo">RoofExplore<span> AI</span></div>
+  <div class="logo">RoofExplore-AI</div>
 
-    <nav>
-        <a href="#solutions">Solutions</a>
-        <a href="#ai">AI Technology</a>
-        <a href="#contact">Contact</a>
-    </nav>
+  <nav>
+    <a href="#solutions">Solutions</a>
+    <a href="#ai">AI Technology</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <section class="hero">
+  <div class="hero-content">
+    <h1>Discover the Future of Roofing.</h1>
 
-    <div class="hero-content">
+    <p>
+      AI-powered discovery for premium, durable and modern roofing
+      products designed for exceptional homes, buildings and developments.
+    </p>
 
-        <h1>
-            Discover the
-            <span>Future of Roofing.</span>
-        </h1>
-
-        <p>
-            RoofExplore AI helps homeowners discover premium,
-            durable, modern roofing solutions designed for quality,
-            protection, beauty, and long-term value.
-        </p>
-
-        <a href="#solutions" class="button">
-            Explore Roofing Solutions
-        </a>
-
-        <a href="#contact" class="button secondary">
-            Get Started
-        </a>
-
-    </div>
-
+    <a class="button" href="#solutions">
+      Explore Roofing Solutions
+    </a>
+  </div>
 </section>
 
 <section id="solutions">
 
-    <div class="section-title">
+  <div class="section-title">
+    <h2>Premium Roofing Solutions</h2>
+    <p>
+      Explore roofing options based on quality, durability, design and project needs.
+    </p>
+  </div>
 
-        <h2>Premium Roofing Solutions</h2>
+  <div class="cards">
 
-        <p>
-            Find roofing products designed for modern,
-            high-quality homes.
-        </p>
-
+    <div class="card">
+      <h3>Premium Quality</h3>
+      <p>
+        Discover roofing products selected for demanding residential,
+        commercial and architectural projects.
+      </p>
     </div>
 
-    <div class="cards">
-
-        <div class="card">
-            <h3>🏠 Premium Quality</h3>
-            <p>
-                Discover roofing materials selected for
-                durability, performance, and modern design.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>🛡️ Built for Protection</h3>
-            <p>
-                Explore roofing solutions designed to help
-                protect homes from demanding weather conditions.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>✨ Modern Design</h3>
-            <p>
-                Discover roofing styles that complement
-                contemporary and luxury architecture.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>🌎 Global Discovery</h3>
-            <p>
-                Explore roofing products and manufacturers
-                from different markets around the world.
-            </p>
-        </div>
-
+    <div class="card">
+      <h3>Modern Design</h3>
+      <p>
+        Find roofing styles that complement contemporary architecture
+        and sophisticated property designs.
+      </p>
     </div>
+
+    <div class="card">
+      <h3>Durability</h3>
+      <p>
+        Compare roofing solutions according to expected performance,
+        materials and project requirements.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Smart Discovery</h3>
+      <p>
+        Use an AI-powered approach to organize roofing choices and
+        discover products more efficiently.
+      </p>
+    </div>
+
+  </div>
 
 </section>
 
-<section id="ai" class="ai-section">
+<section class="ai-section" id="ai">
 
-    <h2>AI-Powered Roofing Discovery</h2>
+  <div class="ai-box">
+
+    <h2>Roofing Search, Reimagined With AI.</h2>
 
     <p>
-        Our vision is to make finding the right roofing product
-        easier by using AI to understand quality, durability,
-        design, climate requirements, and homeowner preferences.
+      RoofExplore-AI is being developed as a smart discovery platform
+      connecting property owners, architects, builders and developers
+      with roofing products and suppliers.
     </p>
 
+  </div>
+
 </section>
 
-<section id="contact" class="cta">
+<section id="contact">
 
-    <h2>Looking for the Right Roof?</h2>
+  <div class="section-title">
+    <h2>Start Exploring</h2>
 
     <p>
-        RoofExplore AI is being built to help you discover
-        roofing solutions with greater confidence.
+      Tell us about your roofing project and discover possibilities
+      designed around your needs.
     </p>
 
     <br>
 
-    <a href="mailto:hello@roofexplore.ai" class="button">
-        Contact RoofExplore AI
+    <a class="button" href="mailto:your-email@example.com">
+      Contact RoofExplore-AI
     </a>
+
+  </div>
 
 </section>
 
 <footer>
-
-    © 2026 RoofExplore AI. All rights reserved.
-
+  <p>© 2026 RoofExplore-AI. All rights reserved.</p>
 </footer>
 
 </body>
