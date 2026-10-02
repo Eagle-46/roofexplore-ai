@@ -1,283 +1,640 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>RoofExplore-AI | Premium Roofing Solutions</title>
+<title>RoofExplore-AI | Intelligent Roofing Discovery</title>
 
-  <meta name="description"
-        content="RoofExplore-AI helps homeowners, architects, builders and property developers discover premium, durable and modern roofing solutions.">
+<meta name="description" content="RoofExplore-AI is an intelligent roofing discovery platform for premium homes, architects, builders and property developers.">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fa;
-      color: #172033;
-      line-height: 1.6;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    header {
-      background: #101827;
-      color: white;
-      padding: 20px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:#172033;
+  background:#f5f7fa;
+  line-height:1.6;
+}
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
+/* NAVIGATION */
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 14px;
-    }
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(12,20,34,.96);
+  color:white;
+  padding:18px 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
 
-    .hero {
-      min-height: 620px;
-      padding: 90px 7%;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(120deg, #101827, #26384f);
-      color: white;
-    }
+.logo{
+  font-size:23px;
+  font-weight:800;
+  letter-spacing:.5px;
+}
 
-    .hero-content {
-      max-width: 800px;
-    }
+.logo span{
+  color:#7dd3fc;
+}
 
-    .hero h1 {
-      font-size: clamp(42px, 7vw, 76px);
-      line-height: 1.05;
-      margin-bottom: 25px;
-    }
+nav{
+  display:flex;
+  gap:25px;
+}
 
-    .hero p {
-      font-size: 20px;
-      max-width: 700px;
-      margin-bottom: 35px;
-      color: #dce5ef;
-    }
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+}
 
-    .button {
-      display: inline-block;
-      background: #ffffff;
-      color: #101827;
-      padding: 15px 25px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+nav a:hover{
+  color:#7dd3fc;
+}
 
-    section {
-      padding: 75px 7%;
-    }
+/* HERO */
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
+.hero{
+  min-height:720px;
+  display:flex;
+  align-items:center;
+  padding:90px 6%;
+  color:white;
 
-    .section-title h2 {
-      font-size: 38px;
-      margin-bottom: 10px;
-    }
+  background:
+    linear-gradient(90deg,
+      rgba(7,15,28,.96) 0%,
+      rgba(7,15,28,.78) 45%,
+      rgba(7,15,28,.35) 100%),
+    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85")
+    center/cover no-repeat;
+}
 
-    .section-title p {
-      color: #667085;
-    }
+.hero-content{
+  max-width:850px;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 25px;
-    }
+.badge{
+  display:inline-block;
+  padding:8px 15px;
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:30px;
+  margin-bottom:25px;
+  font-size:13px;
+  letter-spacing:1px;
+}
 
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 14px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.07);
-    }
+.hero h1{
+  font-size:clamp(48px,7vw,86px);
+  line-height:1.02;
+  margin-bottom:25px;
+}
 
-    .card h3 {
-      margin-bottom: 12px;
-      font-size: 22px;
-    }
+.hero h1 span{
+  color:#7dd3fc;
+}
 
-    .card p {
-      color: #667085;
-    }
+.hero p{
+  font-size:20px;
+  max-width:720px;
+  color:#dbe7f2;
+  margin-bottom:35px;
+}
 
-    .ai-section {
-      background: #eaf0f6;
-      text-align: center;
-    }
+.buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+}
 
-    .ai-box {
-      max-width: 850px;
-      margin: auto;
-      background: white;
-      padding: 45px;
-      border-radius: 18px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
-    }
+.button{
+  display:inline-block;
+  padding:15px 24px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+}
 
-    .ai-box h2 {
-      font-size: 38px;
-      margin-bottom: 15px;
-    }
+.primary{
+  background:white;
+  color:#101827;
+}
 
-    footer {
-      background: #101827;
-      color: white;
-      text-align: center;
-      padding: 30px;
-    }
+.secondary{
+  border:1px solid rgba(255,255,255,.5);
+  color:white;
+}
 
-    @media (max-width: 700px) {
-      header {
-        flex-direction: column;
-      }
+/* SECTIONS */
 
-      nav a {
-        margin: 0 8px;
-      }
+section{
+  padding:85px 6%;
+}
 
-      .hero {
-        padding: 70px 7%;
-      }
-    }
-  </style>
+.section-title{
+  max-width:800px;
+  margin:0 auto 50px;
+  text-align:center;
+}
+
+.section-title h2{
+  font-size:42px;
+  line-height:1.15;
+  margin-bottom:15px;
+}
+
+.section-title p{
+  color:#667085;
+}
+
+/* AI SEARCH */
+
+.ai{
+  background:#101827;
+  color:white;
+}
+
+.ai-box{
+  max-width:1000px;
+  margin:auto;
+  padding:50px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#17263c,#253c57);
+  box-shadow:0 20px 60px rgba(0,0,0,.2);
+}
+
+.ai-box h2{
+  font-size:40px;
+  margin-bottom:15px;
+}
+
+.ai-box p{
+  color:#d7e2ee;
+  margin-bottom:30px;
+}
+
+.search-box{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.search-box input{
+  flex:1;
+  min-width:230px;
+  padding:17px;
+  border:none;
+  border-radius:8px;
+  font-size:16px;
+}
+
+.search-box button{
+  padding:17px 25px;
+  border:none;
+  border-radius:8px;
+  background:white;
+  color:#101827;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* CARDS */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:white;
+  padding:32px;
+  border-radius:16px;
+  box-shadow:0 10px 35px rgba(0,0,0,.07);
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.icon{
+  font-size:35px;
+  margin-bottom:15px;
+}
+
+.card h3{
+  font-size:22px;
+  margin-bottom:10px;
+}
+
+.card p{
+  color:#667085;
+}
+
+/* PROCESS */
+
+.process{
+  background:#eaf0f6;
+}
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+
+.step{
+  text-align:center;
+  padding:25px;
+}
+
+.number{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  background:#172033;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 20px;
+  font-weight:bold;
+  font-size:20px;
+}
+
+/* CTA */
+
+.cta{
+  text-align:center;
+  background:#dce8f2;
+}
+
+.cta h2{
+  font-size:42px;
+  margin-bottom:15px;
+}
+
+.cta p{
+  max-width:700px;
+  margin:0 auto 30px;
+  color:#526174;
+}
+
+.cta-button{
+  display:inline-block;
+  padding:16px 30px;
+  border-radius:8px;
+  background:#101827;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+  background:#0b1220;
+  color:#b8c5d4;
+  text-align:center;
+  padding:35px 6%;
+}
+
+footer strong{
+  color:white;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+  header{
+    flex-direction:column;
+  }
+
+  nav{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .hero{
+    min-height:650px;
+  }
+
+  .hero h1{
+    font-size:48px;
+  }
+
+  .hero p{
+    font-size:18px;
+  }
+
+  .ai-box{
+    padding:30px;
+  }
+
+  .ai-box h2{
+    font-size:32px;
+  }
+
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">RoofExplore-AI</div>
+
+  <div class="logo">
+    RoofExplore<span>-AI</span>
+  </div>
 
   <nav>
+    <a href="#ai">AI Finder</a>
     <a href="#solutions">Solutions</a>
-    <a href="#ai">AI Technology</a>
+    <a href="#process">How It Works</a>
     <a href="#contact">Contact</a>
   </nav>
+
 </header>
 
+
 <section class="hero">
+
   <div class="hero-content">
-    <h1>Discover the Future of Roofing.</h1>
+
+    <div class="badge">
+      AI-POWERED ROOFING DISCOVERY
+    </div>
+
+    <h1>
+      Discover the <span>Future</span> of Roofing.
+    </h1>
 
     <p>
-      AI-powered discovery for premium, durable and modern roofing
-      products designed for exceptional homes, buildings and developments.
+      Explore premium roofing solutions using intelligent search,
+      product discovery and project-focused recommendations.
+      Built for homeowners, architects, builders and property developers.
     </p>
 
-    <a class="button" href="#solutions">
-      Explore Roofing Solutions
-    </a>
+    <div class="buttons">
+
+      <a class="button primary" href="#ai">
+        Start AI Roofing Finder
+      </a>
+
+      <a class="button secondary" href="#solutions">
+        Explore Solutions
+      </a>
+
+    </div>
+
   </div>
+
 </section>
+
+
+<section class="ai" id="ai">
+
+  <div class="ai-box">
+
+    <h2>🤖 AI Roofing Finder</h2>
+
+    <p>
+      Describe what you're looking for and we'll build the foundation
+      for a smarter roofing discovery experience.
+    </p>
+
+    <div class="search-box">
+
+      <input
+        type="text"
+        placeholder="Example: modern luxury roof for a large house..."
+      >
+
+      <button onclick="startSearch()">
+        Explore
+      </button>
+
+    </div>
+
+    <p id="searchMessage" style="margin-top:20px;"></p>
+
+  </div>
+
+</section>
+
 
 <section id="solutions">
 
   <div class="section-title">
-    <h2>Premium Roofing Solutions</h2>
+
+    <h2>Explore Roofing Solutions</h2>
+
     <p>
-      Explore roofing options based on quality, durability, design and project needs.
+      Discover roofing categories designed around different
+      property types, styles and project requirements.
     </p>
+
   </div>
+
 
   <div class="cards">
 
     <div class="card">
-      <h3>Premium Quality</h3>
+
+      <div class="icon">🏠</div>
+
+      <h3>Residential Roofing</h3>
+
       <p>
-        Discover roofing products selected for demanding residential,
-        commercial and architectural projects.
+        Explore roofing concepts for homes, villas and modern residences.
       </p>
+
     </div>
 
-    <div class="card">
-      <h3>Modern Design</h3>
-      <p>
-        Find roofing styles that complement contemporary architecture
-        and sophisticated property designs.
-      </p>
-    </div>
 
     <div class="card">
-      <h3>Durability</h3>
+
+      <div class="icon">💎</div>
+
+      <h3>Luxury Roofing</h3>
+
       <p>
-        Compare roofing solutions according to expected performance,
-        materials and project requirements.
+        Discover sophisticated roofing concepts for premium properties
+        and high-end architectural projects.
       </p>
+
     </div>
 
+
     <div class="card">
-      <h3>Smart Discovery</h3>
+
+      <div class="icon">🏗️</div>
+
+      <h3>Architectural Roofing</h3>
+
       <p>
-        Use an AI-powered approach to organize roofing choices and
-        discover products more efficiently.
+        Explore roofing ideas for architects, designers and developers.
       </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">🌎</div>
+
+      <h3>Global Products</h3>
+
+      <p>
+        Build a future-ready directory connecting roofing products,
+        manufacturers and suppliers.
+      </p>
+
     </div>
 
   </div>
 
 </section>
 
-<section class="ai-section" id="ai">
 
-  <div class="ai-box">
-
-    <h2>Roofing Search, Reimagined With AI.</h2>
-
-    <p>
-      RoofExplore-AI is being developed as a smart discovery platform
-      connecting property owners, architects, builders and developers
-      with roofing products and suppliers.
-    </p>
-
-  </div>
-
-</section>
-
-<section id="contact">
+<section class="process" id="process">
 
   <div class="section-title">
-    <h2>Start Exploring</h2>
+
+    <h2>How RoofExplore-AI Works</h2>
 
     <p>
-      Tell us about your roofing project and discover possibilities
-      designed around your needs.
+      A simple path from project idea to roofing discovery.
     </p>
 
-    <br>
+  </div>
 
-    <a class="button" href="mailto:your-email@example.com">
-      Contact RoofExplore-AI
-    </a>
+
+  <div class="steps">
+
+    <div class="step">
+
+      <div class="number">1</div>
+
+      <h3>Describe</h3>
+
+      <p>
+        Tell us about your property and roofing requirements.
+      </p>
+
+    </div>
+
+
+    <div class="step">
+
+      <div class="number">2</div>
+
+      <h3>Discover</h3>
+
+      <p>
+        Explore products and roofing concepts organized around your needs.
+      </p>
+
+    </div>
+
+
+    <div class="step">
+
+      <div class="number">3</div>
+
+      <h3>Compare</h3>
+
+      <p>
+        Compare materials, designs, specifications and project suitability.
+      </p>
+
+    </div>
+
+
+    <div class="step">
+
+      <div class="number">4</div>
+
+      <h3>Connect</h3>
+
+      <p>
+        Connect with suppliers, manufacturers or roofing professionals.
+      </p>
+
+    </div>
 
   </div>
 
 </section>
 
+
+<section class="cta" id="contact">
+
+  <h2>Build Your Roofing Vision.</h2>
+
+  <p>
+    RoofExplore-AI is being developed as a smarter way to discover
+    premium roofing products and connect projects with possibilities.
+  </p>
+
+  <a class="cta-button" href="mailto:your-email@example.com">
+    Contact RoofExplore-AI
+  </a>
+
+</section>
+
+
 <footer>
-  <p>© 2026 RoofExplore-AI. All rights reserved.</p>
+
+  <p>
+    © 2026 <strong>RoofExplore-AI</strong> —
+    Intelligent Roofing Discovery
+  </p>
+
 </footer>
+
+
+<script>
+
+function startSearch(){
+
+  const input =
+    document.querySelector(".search-box input");
+
+  const message =
+    document.getElementById("searchMessage");
+
+  if(input.value.trim() === ""){
+
+    message.textContent =
+      "Please describe the roofing solution you are looking for.";
+
+    return;
+
+  }
+
+  message.textContent =
+    "RoofExplore-AI is preparing your roofing discovery experience...";
+
+}
+
+</script>
 
 </body>
 </html>
